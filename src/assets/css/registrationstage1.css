@@ -1,0 +1,90 @@
+body{
+  height:100vh;
+  background-color:#f9f9f9;
+}
+.left{
+  height: 100vh;
+  overflow: auto;
+}
+.left::-webkit-scrollbar-track
+{
+	background-color: #ffffff;
+}
+.left::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #ffffff;
+}
+.left::-webkit-scrollbar-thumb
+{
+	background-color: #ffffff;
+	border: 2px solid #ffffff;
+}
+.title{
+  color:orangered;
+  font-weight:bold;
+  font-size:30px;
+  margin-bottom:20px;
+  margin-top:80px;
+} 
+.sub{
+  padding:5px 5px !important;
+  margin: 10px;
+  border:none;
+  color:#fff;
+  background-color: #3700ff;
+  padding:1rem 0;
+  width:250px;
+  margin-bottom:30px !important;
+}
+.sub.focus, .sub:focus, .sub:hover {
+  color: white !important;
+}
+.illustration{
+  height:45% !important;
+  width:35% !important;
+  margin-top:20%;
+  position:fixed !important;
+}
+@media only screen and (max-width: 768px) {
+  .illustration{
+    display:none;
+  }
+}  
+#timeline-wrap{
+  margin-top:50px;
+  margin-bottom:50px;
+  top:100;
+  position:relative;
+}
+#timeline{
+  height:1px;
+  width: 200px;
+  background-color:red;
+  position:relative;
+  border: 2px solid red;
+}
+.marker{
+  z-index:1000;
+  line-height: 50px;
+  position: absolute;
+}
+.m1{
+  top:-80px;
+}
+.m2{
+  top:-80px;
+  left:200px;
+}  
+.reg1{
+  background-color:green;
+  margin-top:65px;
+  font-size:13px !important;
+  color:white;
+}
+.reg2{
+  background-color:red;
+  margin-top:65px;
+  font-size:13px !important;
+  color:white;
+}

@@ -1,0 +1,14 @@
+.logo{
+    border-radius:50%;
+    height:80px;
+    width:80px;
+    margin-top:-20px;
+}
+.tag{
+    font-size:18px;
+    color:black;
+    font-weight:bold;
+}
+.navbar{
+    border:1px transparent;
+}
