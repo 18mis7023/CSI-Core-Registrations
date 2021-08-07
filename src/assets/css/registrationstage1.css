@@ -8,17 +8,17 @@ body{
 }
 .left::-webkit-scrollbar-track
 {
-	background-color: #ffffff;
+	background-color: #f9f9f9;
 }
 .left::-webkit-scrollbar
 {
 	width: 10px;
-	background-color: #ffffff;
+	background-color: #f9f9f9;
 }
 .left::-webkit-scrollbar-thumb
 {
-	background-color: #ffffff;
-	border: 2px solid #ffffff;
+	background-color: #f9f9f9;
+	border: 2px solid #f9f9f9;
 }
 .title{
   color:orangered;
@@ -32,7 +32,7 @@ body{
   margin: 10px;
   border:none;
   color:#fff;
-  background-color: #3700ff;
+  background-color: #6F8EFF;
   padding:1rem 0;
   width:250px;
   margin-bottom:30px !important;
@@ -60,9 +60,9 @@ body{
 #timeline{
   height:1px;
   width: 200px;
-  background-color:red;
+  background-color:#6F8EFF;
   position:relative;
-  border: 2px solid red;
+  border: 2px solid #6F8EFF;
 }
 .marker{
   z-index:1000;

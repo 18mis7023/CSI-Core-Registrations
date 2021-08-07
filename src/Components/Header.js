@@ -1,7 +1,15 @@
 import React from 'react'
 import logo from "../assets/images/logo.png"
 import "../assets/css/header.css"
+import firebase from "../firebaseauth.js"
+import {Redirect} from "react-router-dom"
 class Header extends React.Component{
+    
+    logout() {
+        firebase.auth.signOut().then((result) => {
+            console.log("hello")
+        })
+      }
     render(){
         return(
             <div>
@@ -21,6 +29,7 @@ class Header extends React.Component{
                             <li><a href = "./"><h5 className="tag">HOME</h5></a></li>
                             <li><a href = "http://csivitap.co.in/"><h5 className="tag">WEBSITE</h5></a></li>
                             <li><a href = "./"><h5 className="tag">CONTACT US</h5></a></li>
+                            <li><a onClick= {this.logout}><h5 className="tag">LOGOUT</h5></a></li>
                         </ul>
                     </div>
                 </div>

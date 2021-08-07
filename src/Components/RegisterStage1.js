@@ -158,6 +158,9 @@ function RegisterStage1(props){
                   setGender("");
                   setBranch("");
                   setDob("");
+                  history.push('/registerstage2', { id: 1, data: {
+                      Department:department
+                  } })
                 }
               });
             }else{
@@ -272,6 +275,8 @@ function RegisterStage1(props){
                                 <option value="Marketing Department">Marketing Department</option>
                                 <option value="Event Management Department">Event Management Department</option>
                                 <option value="Admin Department">Admin Department</option>
+                                <option value="Outreach Department">Outreach Department</option>
+                                <option value="Documentation Department">Documentation Department</option>
                             </select>   
                         </div>
                         <div className="form-group">
