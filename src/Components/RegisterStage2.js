@@ -3,7 +3,7 @@ import "../assets/css/registerstage2.css";
 import TechnicalDpt from './Departments/TechnicalDpt';
 import { useHistory } from 'react-router-dom';
 import AdminDpt from './Departments/AdminDpt';
-import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
+// import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import CreativeDpt from './Departments/CreativeDpt';
 import MarketingDpt from './Departments/MarketingDpt';
 import EventDpt from './Departments/EventDpt';
