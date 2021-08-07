@@ -11,7 +11,9 @@ function App() {
         
       <Header />
       <Switch>
-          <Route exact path="/" component={HomeContent}></Route>
+        <Route path="/">
+          <HomeContent />
+        </Route>
           <Route exact path="/registerstage1" component={RegisterStage1}></Route>
           <Route exact path="/registerstage2" component={RegisterStage2}></Route>
       </Switch>
