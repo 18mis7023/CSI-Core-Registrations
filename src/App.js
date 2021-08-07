@@ -17,7 +17,7 @@ function App() {
           </Switch>
         </Router> */}
         <BrowserRouter>
-        <HomeContent />
+        <Header />
         <ScrollToTop>
           <div className="app_child">
             <Switch>
