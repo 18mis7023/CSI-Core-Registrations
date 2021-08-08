@@ -31,7 +31,7 @@ function TechnicalDpt(){
 
                 <div className="content-tabs">
                     {/* Tab-1  Lead-1*/}
-                    <div className={toggleState === 1 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 1 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Skills:</h2>
                         <div>
                             <p>1. Effective communication skills. </p>
@@ -42,7 +42,7 @@ function TechnicalDpt(){
                         </div>
                     </div>
                     {/* Tab-2 UI designers(3)*/}
-                    <div className={toggleState === 2 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 2 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Skills:</h2>
                         <div>
                             <p>1. Interaction design principles.</p>
@@ -55,7 +55,7 @@ function TechnicalDpt(){
                         </div>
                     </div>
                     {/* Tab-3 Web Developers(7)*/}
-                    <div className={toggleState === 3 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 3 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Skills:</h2>
                         <div>
                             <p>1. Html, CSS,php, react js , JavaScript.</p>
@@ -65,7 +65,7 @@ function TechnicalDpt(){
                         </div>
                     </div>
                     {/* Tab-4 Android app development(8*/}
-                    <div className={toggleState === 4 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 4 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Skills:</h2>
                         <div>
                             <p>1. Flutter using dart or Android studio using java or Android studio using kotlin.</p>
@@ -74,7 +74,7 @@ function TechnicalDpt(){
                         </div>
                     </div>
                     {/* Tab-5  Machine learning(3)*/}
-                    <div className={toggleState === 5 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 5 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Skills:</h2>
                         <div>
                             <p>1. Applied Mathematics.</p>

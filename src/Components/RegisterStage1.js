@@ -125,7 +125,7 @@ function RegisterStage1(props){
          .then(fireBaseUrl => {
            setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}))
            const registerref=firebase.database().ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
-           if(imageAsUrl=="")
+           if(imageAsUrl.imgUrl=="")
            {
                 setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}))   
            }

@@ -33,7 +33,7 @@ function AdminDpt(){
 
                 <div className="content-tabs">
                     {/* Tab-1  President*/}
-                    <div className={toggleState === 1 ? "tabcontent  active-content" : "tabcontent"} >
+                    <div className={toggleState === 1 ? "tabtabcontent  active-content" : "tabtabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Provides overall leadership and direction to the club organization. </p>
@@ -53,7 +53,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-2 Vice President(2)*/}
-                    <div className={toggleState === 2 ? "tabcontent  active-content" : "tabcontent"} >
+                    <div className={toggleState === 2 ? "tabtabcontent  active-content" : "tabtabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Presides at meetings in the absence of the president. </p>
@@ -71,7 +71,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-3 Secretary*/}
-                    <div className={toggleState === 3 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 3 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Responsible for recording exact minutes of any Meeting, ordinary or something else, of the Membership or the Executive Committee. </p>
@@ -87,7 +87,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-4 Executive Secretary*/}
-                    <div className={toggleState === 4 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 4 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Responsible for recording exact minutes of any Meeting, ordinary or something else, of the Membership or the Executive Committee. </p>
@@ -103,7 +103,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-5 Treasurer*/}
-                    <div className={toggleState === 5 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 5 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                         <div>
                             <p>1. Responsible for maintaining accurate financial records of the Club and shall be allowed to request payment on behalf of the Club. </p>
@@ -120,7 +120,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-6 Club managers(2)*/}
-                    <div className={toggleState === 6 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 6 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                         <div>
                             <p>1. Responsible while enlisting recently added team members for the club. </p>
@@ -138,7 +138,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-7 Community Manager(2) */}
-                    <div className={toggleState === 7 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 7 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                         <div>
                             <p>1. Respond to club members or Volunteers in a timely manner. </p>
