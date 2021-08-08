@@ -33,7 +33,7 @@ function AdminDpt(){
 
                 <div className="content-tabs">
                     {/* Tab-1  President*/}
-                    <div className={toggleState === 1 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 1 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Provides overall leadership and direction to the club organization. </p>
@@ -53,7 +53,7 @@ function AdminDpt(){
                         </div>
                     </div>
                     {/* Tab-2 Vice President(2)*/}
-                    <div className={toggleState === 2 ? "content  active-content" : "content"} >
+                    <div className={toggleState === 2 ? "tabcontent  active-content" : "tabcontent"} >
                         <h2>Responsibilities:</h2>
                             <div>
                                 <p>1. Presides at meetings in the absence of the president. </p>

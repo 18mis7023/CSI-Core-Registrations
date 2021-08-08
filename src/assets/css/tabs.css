@@ -74,11 +74,12 @@ button {
   flex-grow : 1;
   margin-top: -20%;
 }
-.content {
+.tabcontent {
   background: white;
   padding: 20px;
   width: 100%;
   height: 100%;
+  display: none;
 }
 .content h2 {
   padding: 0px 0 5px 0px;
