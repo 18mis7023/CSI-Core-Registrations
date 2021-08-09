@@ -72,7 +72,6 @@ button {
 }
 .content-tabs {
   flex-grow : 1;
-  margin-top: -20%;
 }
 .tabcontent {
   background: white;

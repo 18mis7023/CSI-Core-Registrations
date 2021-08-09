@@ -3,18 +3,22 @@ import "../assets/css/registerstage2.css";
 import TechnicalDpt from './Departments/TechnicalDpt';
 import { useHistory } from 'react-router-dom';
 import AdminDpt from './Departments/AdminDpt';
-// import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import CreativeDpt from './Departments/CreativeDpt';
 import MarketingDpt from './Departments/MarketingDpt';
 import EventDpt from './Departments/EventDpt';
 import DocumentationDpt from './Departments/DocumentationDpt';
 import OutreachDpt from './Departments/OutreachDpt';
-
+import {motion} from "framer-motion";
+import firebase from '../firebaseauth.js';
 
 function RegisterStage2() {
   const [department, setDepartment] = useState("");
   const history=useHistory();
   const { state } = history.location;
+  const [skills,setSkills]=useState('');
+  const [reference1,setReference1]=useState('');
+  const [reference2,setReference2]=useState('');
+  const [userdata,setUserdata]=useState({});
 
   useEffect(() => {
     if(state!=null)
@@ -22,8 +26,59 @@ function RegisterStage2() {
       setDepartment(state.data.Department);
     }
   }, []);
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        setUserdata(user);
+    }else{
+        history.push("/");
+    } 
+  });
   
-  
+    const setskill=(e)=>{
+        setSkills(e.target.value);
+    }
+    const setreference1=(e)=>{
+      setReference1(e.target.value);
+    }
+    const setreference2=(e)=>{
+      setReference2(e.target.value);
+    }
+    
+
+    const submitregistration2=(e)=>{ 
+        
+      // setIsActive(true)
+    e.preventDefault();
+
+      // console.log(registerref)
+      const registersubmit2={
+        Skills:skills,
+        Reference1:reference1,
+        Reference2:reference2,
+        DepartmentTemp:department
+      };
+      const registerref=firebase.database().ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
+      if(skills!=""){
+      console.log(registersubmit2);
+        registerref.update(registersubmit2,error=>{
+          if (error) {
+            alert("Data could not be saved." + error);
+          } else {
+            alert("Data Submitted Successfully");
+            setSkills("");
+            setReference1("");
+            setReference2("");
+            
+            history.push('/registerstage3', { id: 2, data: {
+                Department:department
+            } })
+          }
+        });
+      }else{
+          
+      }    
+  }
+
 
   // setDepartment(state.data.department)
     return(
@@ -69,9 +124,49 @@ function RegisterStage2() {
                 
               {(department==="Technical Department" || department==="Creative Department" || department==="Admin Department" || department==="Event Management Department" || department==="Outreach Department" || department==="Documentation Department") ? 
               (<div>
-                <h4 className='subtitle'>Terms and Conditions: <br />
-                </h4>
-                <button className="btn sub">REGISTER NOW</button></div>
+                <form className="force-overflow" onSubmit={submitregistration2}>
+                        <div className="form-group">
+                            <label >Skills You have *</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                name="skills" 
+                                id="stage2skills" 
+                                placeholder="java,html,django,communication skills,marketing..." 
+                                value={skills}
+                                onChange={setskill}
+                                required />
+                        </div>
+                        <div className="form-group">
+                            <label >Reference Link 1 (Optional)</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                name="ref1" id="ref1" 
+                                placeholder="Any project link or website Link" 
+                                value={reference1}
+                                onChange={setreference1}
+                                />
+                        </div>
+                        <div className="form-group">
+                            <label >Reference Link 2 (Optional)</label>
+                            <input 
+                                type="text" 
+                                className="form-control" 
+                                name="ref2" id="ref2" 
+                                placeholder="GitHub Link" 
+                                value={reference2}
+                                onChange={setreference2}
+                                />
+                        </div>
+                        <motion.button 
+                            type="submit"
+                            className="btn sub"
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.8 }}
+                            >NEXT</motion.button>
+                    </form>
+                </div>
                 ) : (<p></p>) }
               
             </div>

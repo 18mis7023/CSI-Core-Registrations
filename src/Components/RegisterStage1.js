@@ -110,7 +110,7 @@ function RegisterStage1(props){
       if(imageAsFile === '') {
         alert(`not an image, the image file is a ${typeof(imageAsFile)}`)
       }
-      const uploadTask = firebase.storage().ref(`/images/${imageAsFile.name}`).put(imageAsFile)
+      const uploadTask = firebase.storage().ref(`/images/${email+"_"+imageAsFile.name}`).put(imageAsFile)
       uploadTask.on('state_changed', 
       (snapShot) => {
         //takes a snap shot of the process as it is happening
