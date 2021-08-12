@@ -29,6 +29,7 @@ class Header extends React.Component {
         console.log("error while logging out");
       });
   }
+  
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged((userauth) => {
@@ -49,9 +50,7 @@ class Header extends React.Component {
         <h5 className="tag">{this.state.text}</h5>
       </button>
     ) : (
-      <button>
-        <h5 className="tag">{this.state.text}</h5>
-      </button>
+      null
     );
 
     return (
