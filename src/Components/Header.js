@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import logo from "../assets/images/logo.png";
 import "../assets/css/header.css";
 import firebase from "../firebaseauth.js";
@@ -9,9 +9,10 @@ class Header extends React.Component {
     super(props);
     this.state = {
       user: null,
+      text:"Register"
+     
     };
   }
-
   logout() {
     firebase
       .auth()
@@ -19,7 +20,9 @@ class Header extends React.Component {
       .then(function () {
         this.setState({
           user: null,
+          text:"Register"
         });
+        this.setText({text:"Register",})
         console.log("Logged-out successfully");
       })
       .catch(function (error) {
@@ -28,21 +31,26 @@ class Header extends React.Component {
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.setState({ user });
+    firebase.auth().onAuthStateChanged((userauth) => {
+      if (userauth) {
+        this.setState({ user:userauth,text:"Logout" });
+      }else{
+        this.setState({ user:null,text:"Register" });
       }
     });
+    // ()=>{
+    //   this.state.user ?(this.setState({text:"Logout"})):(this.setState({text:"Register"}))
+    // };
   }
 
   render() {
     let authButton = this.state.user ? (
       <button onClick={this.logout}>
-        <h5 className="tag">LOGOUT</h5>
+        <h5 className="tag">{this.state.text}</h5>
       </button>
     ) : (
       <button>
-        <h5 className="tag">REGISTER</h5>
+        <h5 className="tag">{this.state.text}</h5>
       </button>
     );
 

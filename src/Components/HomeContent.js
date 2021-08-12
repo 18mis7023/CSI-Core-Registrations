@@ -53,7 +53,7 @@ function HomeContent(){
                 alert("Data could not be saved." + error);
                 } else {
                     alert("Data Submitted Successfully");
-                    history.push('/registerstage3');
+                    // history.push('/registerstage3');
                 }
             });
             
