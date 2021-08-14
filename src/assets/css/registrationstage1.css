@@ -88,3 +88,12 @@ body{
   font-size:13px !important;
   color:white;
 }
+
+.statusin{
+  background-color: #6F8EFF !important;
+  color: #fff !important;
+}
+.statusout{
+  background-color: #bbbbbb !important;
+  color: #fff !important;
+}

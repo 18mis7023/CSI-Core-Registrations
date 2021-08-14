@@ -48,6 +48,7 @@ function RegisterStage1(props){
     const [gender,setGender]=useState('');
     const [disable,setDisable]=useState(false);
     const [isActive,setIsActive]=useState(false);
+    const [loading,setLoading]=useState('');
     let history=useHistory();
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -102,6 +103,7 @@ function RegisterStage1(props){
         }
     }
     const submitregistration=(e)=>{ 
+        setLoading("Loading ...... please wait ......");
         
         setIsActive(true)
       e.preventDefault();
@@ -121,7 +123,7 @@ function RegisterStage1(props){
       }, () => {
         // gets the functions from storage refences the image storage in firebase by the children
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
-        
+            setLoading("Data is submiting ...... please wait ......");
            const registerref=firebase.database().ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
            
             // console.log(registerref)
@@ -142,17 +144,19 @@ function RegisterStage1(props){
             console.log(registersubmit);
               registerref.set(registersubmit,error=>{
                 if (error) {
-                  alert("Data could not be saved." + error);
+                  alert("Sorry Please Try again once more !!! ." + error);
                 } else {
-                  alert("Data Submitted Successfully");
-                  setName("");
-                  setAddress("");
-                  setPhonenum("");
-                  setRegistrationnum("");
-                  setDepartment("");
-                  setGender("");
-                  setBranch("");
-                  setDob("");
+                     setLoading("DATA SUBMITTED");
+
+                     alert("Stage 1 Data Submitted Successfully");
+                //   setName("");
+                //   setAddress("");
+                //   setPhonenum("");
+                //   setRegistrationnum("");
+                //   setDepartment("");
+                //   setGender("");
+                //   setBranch("");
+                //   setDob("");
                   history.push('/registerstage2', { id: 1, data: {
                       Department:department
                   } })
@@ -180,15 +184,19 @@ function RegisterStage1(props){
             <div className='row'>
                 <div className="col-sm-7 left" >
                     <h3 className='title' style={TextCenter}>CSI CORE TEAM REGISTRATION</h3>
-                    <div id="timeline-wrap">
+                    {/* <div id="timeline-wrap">
                         <div id="timeline"></div>
                         <div className="marker m1">
-                            <button className='btn reg1'>STAGE 1</button>
+                            <button className='btn reg1 statusin'>STAGE 1</button>
                         </div>
                         <div className="marker m2">
-                            <button className='btn reg2'>STAGE 2</button>
+                            <button className='btn reg2 statusout'>STAGE 2</button>
+                        </div>
+                        <div className="marker m3">
+                            <button className='btn reg3 statusout'>Submission</button>
                         </div>
                     </div>
+                     */}
                     <form className="force-overflow" onSubmit={submitregistration}>
                         <div className="form-group">
                             <label >Full Name *</label>
@@ -248,7 +256,7 @@ function RegisterStage1(props){
                             <input 
                                 type="text" 
                                 className="form-control" 
-                                name="id" id="regno" 
+                                name="branch" id="branch" 
                                 placeholder="Software Engineering" 
                                 value={branch}
                                 onChange={setbranch}
@@ -284,6 +292,7 @@ function RegisterStage1(props){
                             whileHover={{ scale: 1.2 }}
                             whileTap={{ scale: 0.8 }}
                             >NEXT</motion.button>
+                            <spam className="loading">{loading}</spam>
                     </form>
                     <LoadingOverlay
                         active={isActive}

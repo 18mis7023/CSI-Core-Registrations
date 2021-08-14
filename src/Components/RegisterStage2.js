@@ -17,7 +17,6 @@ function RegisterStage2() {
   const { state } = history.location;
   const [skills,setSkills]=useState('');
   const [reference1,setReference1]=useState('');
-  const [reference2,setReference2]=useState('');
   const [userdata,setUserdata]=useState({});
 
   useEffect(() => {
@@ -40,9 +39,6 @@ function RegisterStage2() {
     const setreference1=(e)=>{
       setReference1(e.target.value);
     }
-    const setreference2=(e)=>{
-      setReference2(e.target.value);
-    }
     
 
     const submitregistration2=(e)=>{ 
@@ -54,7 +50,6 @@ function RegisterStage2() {
       const registersubmit2={
         Skills:skills,
         Reference1:reference1,
-        Reference2:reference2,
         DepartmentTemp:department
       };
       const registerref=firebase.database().ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
@@ -64,10 +59,9 @@ function RegisterStage2() {
           if (error) {
             alert("Data could not be saved." + error);
           } else {
-            alert("Data Submitted Successfully");
+            alert("Stage 2 Data is Submitted Successfully");
             setSkills("");
             setReference1("");
-            setReference2("");
             
             history.push('/registerstage3', { id: 2, data: {
                 Department:department
@@ -143,20 +137,9 @@ function RegisterStage2() {
                                 type="text" 
                                 className="form-control" 
                                 name="ref1" id="ref1" 
-                                placeholder="Any project link or website Link" 
+                                placeholder="Github Link or Github Username" 
                                 value={reference1}
                                 onChange={setreference1}
-                                />
-                        </div>
-                        <div className="form-group">
-                            <label >Reference Link 2 (Optional)</label>
-                            <input 
-                                type="text" 
-                                className="form-control" 
-                                name="ref2" id="ref2" 
-                                placeholder="GitHub Link" 
-                                value={reference2}
-                                onChange={setreference2}
                                 />
                         </div>
                         <motion.button 

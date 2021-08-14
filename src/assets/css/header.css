@@ -11,3 +11,10 @@
 .navbar{
     border:1px transparent;
 }
+
+.logoutbtn{
+    background-color: #f9f9f9;
+}
+.headerbtn:hover {
+    border: black 1px solid;
+}

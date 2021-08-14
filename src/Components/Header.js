@@ -34,7 +34,7 @@ class Header extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged((userauth) => {
       if (userauth) {
-        this.setState({ user:userauth,text:"Logout" });
+        this.setState({ user:userauth,text:"LOGOUT" });
       }else{
         this.setState({ user:null,text:"Register" });
       }
@@ -46,7 +46,7 @@ class Header extends React.Component {
 
   render() {
     let authButton = this.state.user ? (
-      <button onClick={this.logout}>
+      <button onClick={this.logout} className="logoutbtn headerbtn">
         <h5 className="tag">{this.state.text}</h5>
       </button>
     ) : (
@@ -75,7 +75,7 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <a href="./">
+                  <a href="./" >
                     <h5 className="tag">HOME</h5>
                   </a>
                 </li>
