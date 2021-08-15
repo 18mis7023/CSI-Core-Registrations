@@ -775,7 +775,7 @@ function Contact() {
               <br />
               <br />
               <br />
-              <label class=""> Naveen (Club President)</label>
+              <label class=""> B. Naveen Sai</label>
               <br />
               <br />
               <label class=""> Phone: +91 7995611143</label>
