@@ -768,17 +768,20 @@ function Contact() {
 
           <div class="overlay">
             <div class="wrap">
-              <label class=""> EMAIL: csiclubofficial@csivitap.co.in</label>
+              <label class="mylabel">
+                {" "}
+                EMAIL: csiclubofficial@csivitap.co.in
+              </label>
               <br />
               <br />
-              <label class=""> Website: csivitap.co.in</label>
+              <label class="mylabel"> Website: csivitap.co.in</label>
               <br />
               <br />
               <br />
-              <label class=""> B. Naveen Sai</label>
+              <label class="mylabel"> B. Naveen Sai</label>
               <br />
               <br />
-              <label class=""> Phone: +91 7995611143</label>
+              <label class="mylabel"> Phone: +91 7995611143</label>
               <br />
               <br />
               <br />
