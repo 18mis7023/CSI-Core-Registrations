@@ -49,7 +49,7 @@ class RegisterStage3 extends React.Component {
             alert("Sorry Please Try again once more !!! ." + error);
           } else {
             <Redirect to="/submitted" />;
-            alert("Stage 3 Data Submitted Successfully");
+            // alert("Stage 3 Data Submitted Successfully");
             this.setState({ redirect: "/submitted" });
           }
         });

@@ -1,4 +1,5 @@
-import React  from "react";
+import React from "react";
+import Contact from "./Contact";
 import logo from "../assets/images/logo.png";
 import "../assets/css/header.css";
 import firebase from "../firebaseauth.js";
@@ -9,8 +10,7 @@ class Header extends React.Component {
     super(props);
     this.state = {
       user: null,
-      text:"Register"
-     
+      text: "Register",
     };
   }
   logout() {
@@ -20,23 +20,22 @@ class Header extends React.Component {
       .then(function () {
         this.setState({
           user: null,
-          text:"Register"
+          text: "Register",
         });
-        this.setText({text:"Register",})
+        this.setText({ text: "Register" });
         console.log("Logged-out successfully");
       })
       .catch(function (error) {
         console.log("error while logging out");
       });
   }
-  
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged((userauth) => {
       if (userauth) {
-        this.setState({ user:userauth,text:"LOGOUT" });
-      }else{
-        this.setState({ user:null,text:"Register" });
+        this.setState({ user: userauth, text: "LOGOUT" });
+      } else {
+        this.setState({ user: null, text: "Register" });
       }
     });
     // ()=>{
@@ -49,9 +48,7 @@ class Header extends React.Component {
       <button onClick={this.logout} className="logoutbtn headerbtn">
         <h5 className="tag">{this.state.text}</h5>
       </button>
-    ) : (
-      null
-    );
+    ) : null;
 
     return (
       <div>
@@ -75,7 +72,7 @@ class Header extends React.Component {
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <a href="./" >
+                  <a href="./">
                     <h5 className="tag">HOME</h5>
                   </a>
                 </li>
@@ -85,7 +82,7 @@ class Header extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="./">
+                  <a href="./contact">
                     <h5 className="tag">CONTACT US</h5>
                   </a>
                 </li>

@@ -1,0 +1,82 @@
+.Contact {
+  //   width: 70%;
+  height: 100vh;
+  //   margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .myform {
+  //   width: 50%;
+  margin-top: 100px;
+  float: right;
+  flex: 50%;
+}
+
+.container .mysvg {
+  margin-top: 150px;
+  flex: 50%;
+  float: left;
+  //   width: 40%;
+  height: 43rem;
+  margin-right: 4rem;
+}
+
+@media (max-width: 800px) {
+  .myform,
+  .mysvg {
+    flex: 100%;
+  }
+}
+
+#envelope {
+  animation: float 2s ease-in-out infinite;
+}
+
+label {
+  font-size: 24px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Lobster");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,800,700,900,300,100");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.fa {
+  padding: 10px;
+  font-size: 28px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 8px;
+  border-radius: 50%;
+}
+
+.wrap a {
+  text-decoration: none;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  background-color: antiquewhite;
+}
+
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+  text-decoration: none;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
