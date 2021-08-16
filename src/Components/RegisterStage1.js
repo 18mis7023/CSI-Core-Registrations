@@ -105,26 +105,7 @@ function RegisterStage1(props) {
 
     setIsActive(true);
     e.preventDefault();
-    console.log("start of upload");
-    console.log(imageAsFile);
-    if (imageAsFile === "") {
-      alert(`not an image, the image file is a ${typeof imageAsFile}`);
-    }
-    const uploadTask = firebase
-      .storage()
-      .ref(`/images/${email + "_" + imageAsFile.name}`)
-      .put(imageAsFile);
-    uploadTask.on(
-      "state_changed",
-      (snapShot) => {
-        //takes a snap shot of the process as it is happening
-        console.log(snapShot);
-      },
-      (err) => {
-        //catches the errors
-        console.log(err);
-      },
-      () => {
+   
         // gets the functions from storage refences the image storage in firebase by the children
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
         setLoading("Data is submiting ...... please wait ......");
@@ -139,7 +120,6 @@ function RegisterStage1(props) {
           Number: phonenum,
           RegistrationNumber: registrationnum,
           Address: address,
-          ImageUrl: imageAsUrl,
           id: firebase.auth().currentUser.uid,
           DOB: dob,
           Branch: branch,
@@ -154,7 +134,6 @@ function RegisterStage1(props) {
           phonenum.length == 10 &&
           registrationnum.length >= 9 &&
           validator.isEmail(email) &&
-          imageAsUrl != "" &&
           branch != "" &&
           dob != "" &&
           department != "" &&
@@ -166,16 +145,6 @@ function RegisterStage1(props) {
               alert("Sorry Please Try again once more !!! ." + error);
             } else {
               setLoading("DATA SUBMITTED");
-
-              //  alert("Stage 1 Data Submitted Successfully");
-              //   setName("");
-              //   setAddress("");
-              //   setPhonenum("");
-              //   setRegistrationnum("");
-              //   setDepartment("");
-              //   setGender("");
-              //   setBranch("");
-              //   setDob("");
               history.push("/registerstage2", {
                 id: 1,
                 data: {
@@ -184,18 +153,8 @@ function RegisterStage1(props) {
               });
             }
           });
-        } else {
-          if (imageAsUrl == "") {
-            alert("Try to reduce the size of the image URL");
-          } else if (gender == "") {
-            alert("please select the gender");
-          } else {
-            alert("Please check the details whether any field is empty!!!");
-          }
         }
       }
-    );
-  };
   const TextCenter = {
     textAlign: "center",
   };
@@ -206,19 +165,6 @@ function RegisterStage1(props) {
           <h3 className="title" style={TextCenter}>
             CSI CORE TEAM REGISTRATION
           </h3>
-          {/* <div id="timeline-wrap">
-                        <div id="timeline"></div>
-                        <div className="marker m1">
-                            <button className='btn reg1 statusin'>STAGE 1</button>
-                        </div>
-                        <div className="marker m2">
-                            <button className='btn reg2 statusout'>STAGE 2</button>
-                        </div>
-                        <div className="marker m3">
-                            <button className='btn reg3 statusout'>Submission</button>
-                        </div>
-                    </div>
-                     */}
           <form className="force-overflow" onSubmit={submitregistration}>
             <div className="form-group">
               <label>Full Name *</label>
@@ -310,16 +256,6 @@ function RegisterStage1(props) {
                 placeholder="Software Engineering"
                 value={branch}
                 onChange={setbranch}
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label>Image *</label>
-              <input
-                type="file"
-                accept="image/*"
-                id="image"
-                onChange={handleImageAsFile}
                 required
               />
             </div>
