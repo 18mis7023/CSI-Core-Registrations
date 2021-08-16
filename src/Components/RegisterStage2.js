@@ -126,7 +126,8 @@ function RegisterStage2() {
             department === "Admin Department" ||
             department === "Event Management Department" ||
             department === "Outreach Department" ||
-            department === "Documentation Department" ? (
+            department === "Documentation Department" ||
+            department === "Marketing Department" ? (
               <div>
                 <form className="force-overflow" onSubmit={submitregistration2}>
                   <div className="form-group">
