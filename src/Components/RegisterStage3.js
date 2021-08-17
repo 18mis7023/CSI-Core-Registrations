@@ -32,28 +32,28 @@ class RegisterStage3 extends React.Component {
       this.setState({ que2: e.target.value });
     };
     const submitreg3 = (e) => {
-      if (this.state.que1 == "" || this.state.que2 == "") {
-        alert("Please fill the all details correctly");
-      } else {
-        const registerref = firebase
-          .database()
-          .ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
-        // console.log(registerref)
-        const registersubmit3 = {
-          Question1: this.state.que1,
-          Question2: this.state.que2,
-        };
+      // if (this.state.que1 == "" || this.state.que2 == "") {
+      //   alert("Please fill the all details correctly");
+      // } else {
+      const registerref = firebase
+        .database()
+        .ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
+      // console.log(registerref)
+      const registersubmit3 = {
+        Question1: this.state.que1,
+        Question2: this.state.que2,
+      };
 
-        registerref.update(registersubmit3, (error) => {
-          if (error) {
-            alert("Sorry Please Try again once more !!! ." + error);
-          } else {
-            <Redirect to="/submitted" />;
-            // alert("Stage 3 Data Submitted Successfully");
-            this.setState({ redirect: "/submitted" });
-          }
-        });
-      }
+      registerref.update(registersubmit3, (error) => {
+        if (error) {
+          alert("Sorry Please Try again once more !!! ." + error);
+        } else {
+          <Redirect to="/submitted" />;
+          // alert("Stage 3 Data Submitted Successfully");
+          this.setState({ redirect: "/submitted" });
+        }
+      });
+      // }
     };
 
     return (

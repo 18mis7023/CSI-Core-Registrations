@@ -297,7 +297,7 @@ function RegisterStage1(props) {
                 id="exampleFormControlInput1"
                 placeholder="Address"
                 rows="5"
-                required
+                // required
                 onChange={setaddress}
                 value={address}
               />
