@@ -102,7 +102,6 @@ function RegisterStage1(props) {
   };
   const submitregistration = (e) => {
     setLoading("Loading ...... please wait ......");
-
     setIsActive(true);
     e.preventDefault();
 
@@ -139,7 +138,7 @@ function RegisterStage1(props) {
       department != "" &&
       gender != ""
     ) {
-      console.log(registersubmit);
+      //   console.log(registersubmit);
       registerref.set(registersubmit, (error) => {
         if (error) {
           alert("Sorry Please Try again once more !!! ." + error);
@@ -153,6 +152,9 @@ function RegisterStage1(props) {
           });
         }
       });
+    } else {
+      alert("Please fill the correct details ");
+      setLoading(" ");
     }
   };
   const TextCenter = {
@@ -207,7 +209,9 @@ function RegisterStage1(props) {
               />
             </div>
             <div className="form-group">
-              <label>Mobile Number *</label>
+              <label>
+                Mobile Number * (only 10 digits numbers are allowed)
+              </label>
               <input
                 type="number"
                 className="form-control"
@@ -260,7 +264,7 @@ function RegisterStage1(props) {
               />
             </div>
             <div className="form-group">
-              <label>Department</label>
+              <label>Department *</label>
               <select
                 className="form-control"
                 name="department"
@@ -308,11 +312,11 @@ function RegisterStage1(props) {
             </motion.button>
             <spam className="loading">{loading}</spam>
           </form>
-          <LoadingOverlay
+          {/* <LoadingOverlay
             active={isActive}
             spinner
             text="uploading Image"
-          ></LoadingOverlay>
+          ></LoadingOverlay> */}
         </div>
         <div className="col-sm-4 col-sm-offset-1">
           <motion.img
