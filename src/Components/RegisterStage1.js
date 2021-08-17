@@ -105,56 +105,56 @@ function RegisterStage1(props) {
 
     setIsActive(true);
     e.preventDefault();
-   
-        // gets the functions from storage refences the image storage in firebase by the children
-        // gets the download url then sets the image from firebase as the value for the imgUrl key:
-        setLoading("Data is submiting ...... please wait ......");
-        const registerref = firebase
-          .database()
-          .ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
 
-        // console.log(registerref)
-        const registersubmit = {
-          Name: name,
-          Email: email,
-          Number: phonenum,
-          RegistrationNumber: registrationnum,
-          Address: address,
-          id: firebase.auth().currentUser.uid,
-          DOB: dob,
-          Branch: branch,
-          Department: department,
-          Gender: gender,
-        };
-        if (
-          name != "" &&
-          email != "" &&
-          phonenum != "" &&
-          registrationnum != "" &&
-          phonenum.length == 10 &&
-          registrationnum.length >= 9 &&
-          validator.isEmail(email) &&
-          branch != "" &&
-          dob != "" &&
-          department != "" &&
-          gender != ""
-        ) {
-          console.log(registersubmit);
-          registerref.set(registersubmit, (error) => {
-            if (error) {
-              alert("Sorry Please Try again once more !!! ." + error);
-            } else {
-              setLoading("DATA SUBMITTED");
-              history.push("/registerstage2", {
-                id: 1,
-                data: {
-                  Department: department,
-                },
-              });
-            }
+    // gets the functions from storage refences the image storage in firebase by the children
+    // gets the download url then sets the image from firebase as the value for the imgUrl key:
+    setLoading("Data is submiting ...... please wait ......");
+    const registerref = firebase
+      .database()
+      .ref(`CSI/Registration/${firebase.auth().currentUser.uid}`);
+
+    // console.log(registerref)
+    const registersubmit = {
+      Name: name,
+      Email: email,
+      Number: phonenum,
+      RegistrationNumber: registrationnum,
+      Address: address,
+      id: firebase.auth().currentUser.uid,
+      DOB: dob,
+      Branch: branch,
+      Department: department,
+      Gender: gender,
+    };
+    if (
+      name != "" &&
+      email != "" &&
+      phonenum != "" &&
+      registrationnum != "" &&
+      phonenum.length == 10 &&
+      registrationnum.length >= 9 &&
+      validator.isEmail(email) &&
+      branch != "" &&
+      dob != "" &&
+      department != "" &&
+      gender != ""
+    ) {
+      console.log(registersubmit);
+      registerref.set(registersubmit, (error) => {
+        if (error) {
+          alert("Sorry Please Try again once more !!! ." + error);
+        } else {
+          setLoading("DATA SUBMITTED");
+          history.push("/registerstage2", {
+            id: 1,
+            data: {
+              Department: department,
+            },
           });
         }
-      }
+      });
+    }
+  };
   const TextCenter = {
     textAlign: "center",
   };
@@ -291,7 +291,7 @@ function RegisterStage1(props) {
                 className="form-control"
                 name="aboutc"
                 id="exampleFormControlInput1"
-                placeholder="Company Details"
+                placeholder="Address"
                 rows="5"
                 required
                 onChange={setaddress}
