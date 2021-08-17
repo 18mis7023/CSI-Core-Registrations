@@ -83,7 +83,6 @@ class RegisterStage3 extends React.Component {
                   paddingRight: "20px",
                 }}
               >
-                <h3 className="title">Administrative Department</h3>
                 <div className="form-group">
                   <div className="app">
                     <button
