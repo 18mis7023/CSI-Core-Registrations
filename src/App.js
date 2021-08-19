@@ -6,6 +6,7 @@ import Submitted from "./Components/submitted";
 import Header from "./Components/Header";
 import HomeContent from "./Components/HomeContent";
 import Contact from "./Components/Contact";
+import NotFound from "./Components/NotFound";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -16,7 +17,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={HomeContent}></Route>
-          <Route
+          {/* <Route
             exact
             path="/registerstage1"
             component={RegisterStage1}
@@ -30,9 +31,12 @@ function App() {
             exact
             path="/registerstage3"
             component={RegisterStage3}
-          ></Route>
+          ></Route> */}
           <Route exact path="/submitted" component={Submitted}></Route>
           <Route exact path="/contact" component={Contact}></Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </Router>
     </div>

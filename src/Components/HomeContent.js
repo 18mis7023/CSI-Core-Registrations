@@ -69,7 +69,7 @@ function HomeContent() {
           <p className="subcontent">
             Talent wins games, but teamwork and intelligence win championships
           </p>
-          <motion.button
+          {/* <motion.button
             className="btn reg"
             onClick={handleOnClick}
             whileHover={{ scale: 1.2 }}
@@ -77,7 +77,22 @@ function HomeContent() {
             style={{ color: "white" }}
           >
             REGISTER NOW
-          </motion.button>
+          </motion.button> */}
+          <br />
+          <br />
+          <br />
+          <br />
+          <div>
+            <h1>Registrations Closed.</h1>
+            <br />
+            <h3>
+              For queries contact:
+              <br />
+              <br />
+              B. Naveen Sai <br />
+              Phone: +91 7995611143
+            </h3>
+          </div>
         </div>
 
         <div className="col-sm-6 col-sm-offset-1">

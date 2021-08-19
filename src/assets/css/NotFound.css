@@ -1,0 +1,23 @@
+.notfound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.c1 {
+  animation: mymove 2s linear infinite;
+}
+
+@keyframes mymove {
+  25% {
+    transform: rotateY(5deg);
+  }
+  50% {
+    transform: rotateX(15deg);
+  }
+  75% {
+    transform: rotateY(-5deg);
+  }
+}
