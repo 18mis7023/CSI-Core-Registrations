@@ -3,6 +3,8 @@
 node_modules/
 package-lock.json
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Demo Of the project 
+[Click Here to see the Website](https://csi-core-reg.netlify.app/)
 
 ## Available Scripts
 
